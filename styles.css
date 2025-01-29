@@ -1,0 +1,195 @@
+/* Основные стили для сайта */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #1e3a5f;
+    color: #fff;
+    padding: 20px;
+    position: fixed;
+    height: 100%;
+}
+
+.sidebar h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #ecf0f1;
+}
+
+.sidebar nav ul {
+    list-style-type: none;
+}
+
+.sidebar nav ul li {
+    margin-bottom: 20px;
+}
+
+.sidebar nav ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 15px;
+    display: block;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.sidebar nav ul li a:hover,
+.sidebar nav ul li a.active {
+    background-color: #3498db;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.8);
+}
+
+.sidebar nav ul li a:focus {
+    outline: none;
+    border: 2px solid #3498db;
+}
+
+.content {
+    margin-left: 250px;
+    padding: 20px;
+    flex: 1;
+}
+
+header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #1e3a5f;
+}
+
+header p {
+    font-size: 18px;
+    color: #7f8c8d;
+    margin-bottom: 40px;
+}
+
+.banner {
+    background-color: #3498db;
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.banner-text h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.banner-text p {
+    font-size: 18px;
+    margin-bottom: 0;
+}
+
+/* Сетка карточек */
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 карточки в строке */
+    gap: 30px;
+    justify-items: center; /* Центрирование карточек */
+    align-items: center;
+    margin-top: 40px;
+}
+
+.feature {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 250px; /* Уменьшена высота карточек */
+}
+
+.feature:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.feature h3 {
+    font-size: 24px;
+    color: #1e3a5f;
+    margin-bottom: 10px;
+}
+
+.feature p {
+    font-size: 16px;
+    color: #7f8c8d;
+    margin-bottom: 20px; /* Уменьшен нижний отступ */
+}
+
+/* Стиль карточек достопримечательностей */
+.point-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 240px;
+}
+
+.point-card img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.point-card h3 {
+    font-size: 24px;
+    margin-top: 10px;
+    color: #1e3a5f;
+}
+
+.point-card p {
+    font-size: 16px;
+    color: #7f8c8d;
+}
+
+.point-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Стили для адаптивности */
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        position: relative;
+        height: auto;
+    }
+
+    .content {
+        margin-left: 0;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    .point-card, .trail, .category {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
